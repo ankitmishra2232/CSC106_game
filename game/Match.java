@@ -8,7 +8,7 @@ import uno.UnoCard;
  */
 public class Match implements Game {
 	
-	
+	private EffectsController eControl;
 	private PlayersManager pControl;
 	private Table table;
 	private static Match match = null;
@@ -17,6 +17,7 @@ public class Match implements Game {
 	private Match(){
 		this.table = Table.getInstance();
 		this.pControl = PlayersManager.getInstance();
+		this.eControl = new EffectsController(this.table,this.pControl);
 	}
 
 	
@@ -123,6 +124,26 @@ public class Match implements Game {
 		return true;
 	}
 	
+	/**
+	 * Apply the effect of the last card played in the game.
+	 */
+	public void applyEffect(){
+		UnoCard card = this.table.showTopCard();
+		card.applyEffect(eControl);
+		
+	}
+	
+	/**
+	 * Apply the effect of an color change card in the game.
+	 * takes wildColor - the color chosen by the user.
+	 */
+	public boolean applyEffect(String wildColor){
+		if(this.eControl.setWildColor(wildColor) == false)
+			return false;
+		
+		this.applyEffect();
+		return true;
+	}
 	
 	/**
 	 * Finish a player's turn. If the player has only one more card left,
