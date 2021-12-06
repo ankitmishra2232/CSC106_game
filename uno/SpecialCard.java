@@ -1,5 +1,6 @@
 package uno;
 
+import tableGame.EffectsController;
 
 public abstract class SpecialCard extends UnoCard{
 
@@ -39,7 +40,12 @@ public abstract class SpecialCard extends UnoCard{
     public String getValue(){
     	return this.value.toString();
     }
-
+    
+    /**
+     * Apply the effect of the card in the game.
+     */
+    @Override
+    public abstract void applyEffect(EffectsController ctrl);
     
     /**
      * Verify if the cards match.

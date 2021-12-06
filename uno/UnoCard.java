@@ -1,5 +1,6 @@
 package uno;
 
+import tableGame.EffectsController;
 
 /**
  * This class represents an generic UNO card. In UNO game, there are cards
@@ -20,7 +21,12 @@ public abstract class UnoCard {
 	 */
 	public abstract String getValue();
 	
-	public abstract void applyEffect();//add effect of card
+	
+	/**
+	 * Apply the effect of a UNO card in the game.
+	 * game: the game that will be affected.
+	 */
+	public abstract void applyEffect(EffectsController ctrl);
 	
 	/**
 	 * Verify if the UNO card matches with another one.

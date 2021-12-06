@@ -25,7 +25,7 @@ public class UnoDeck extends CardCollection <UnoCard>{
             for(int j = 0; j < 2 ; j++) {
                 cardList.add(new SkipCard(c));
                 cardList.add(new ReverseCard(c));
-                cardList.add(new DrawTwoCard());
+                cardList.add(new DrawTwoCard(c));
                 
             }
         }

@@ -1,29 +1,18 @@
 package uno;
 
-public class DrawTwoCard extends UnoCard {
+import tableGame.EffectsController;
 
-	@Override
-	public String getColor() {
-		// TODO Auto-generated method stub
-		return null;
+public class DrawTwoCard extends SpecialCard{
+	public DrawTwoCard(NormalCard.Color color){
+		super(color, SpecialCard.Value.DRAWTWO);
 	}
-
+	
+	/**
+	 * This card makes the next player takes two more cards.
+	 * It also loses its turn.
+	 */
 	@Override
-	public String getValue() {
-		// TODO Auto-generated method stub
-		return null;
+	public void applyEffect(EffectsController ctrl){
+		ctrl.applyDrawTwo();
 	}
-
-	@Override
-	public void applyEffect() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public boolean match(UnoCard card) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

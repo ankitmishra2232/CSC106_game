@@ -1,5 +1,6 @@
 package uno;
 
+import tableGame.EffectsController;
 
 /**
  * This class represent one card in a normal deck of uno
@@ -45,6 +46,8 @@ public class NormalCard extends UnoCard{
     	return this.value.toString();
     }
     
+    @Override
+    public void applyEffect(EffectsController ctrl){	}
     
     @Override
     public boolean match(UnoCard card){
@@ -67,10 +70,4 @@ public class NormalCard extends UnoCard{
     	}
     	return false;
     }
-
-	@Override
-	public void applyEffect() {
-		// TODO Auto-generated method stub
-		
-	}
 }

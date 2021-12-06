@@ -1,5 +1,6 @@
 package uno;
 
+import tableGame.EffectsController;
 
 /**
  * This class represents a Wild Card.
@@ -41,7 +42,15 @@ public class WildCard extends UnoCard{
     	return this.value.name();
     }
     
-   
+    /**
+     * Apply the effect of the wild card in the game. A "WILD" card
+     * changes it's color for BLUE, RED, YELLOR or GREEN. Additionally, 
+	 * the next player loses its turn.
+     */
+    @Override
+    public void applyEffect(EffectsController crtl){   	
+    	this.setColor(crtl.applyWild());
+    }
     
     /**
      * Only matches with other cards if its has a color different of BLACK.
@@ -82,10 +91,4 @@ public class WildCard extends UnoCard{
     		
     	return this.getValue();
     }
-
-	@Override
-	public void applyEffect() {
-		// TODO Auto-generated method stub
-		
-	}
 }
