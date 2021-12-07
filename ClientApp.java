@@ -1,22 +1,18 @@
 import game.Match;
 import interpreter.Interpreter;
-import system.SignUpPlayers;
+import system.SignUpPlayer;
 
 public class ClientApp {
 
 	public static void main(String[] args) {
 		Interpreter inter = new Interpreter();	
-		SignUpPlayers sign = new SignUpPlayers();
+		SignUpPlayer sign = new SignUpPlayer();
 		Match game = Match.getInstance();
 		
 		
-		System.out.println("---------------------------------------"
-				+ "-----------------------------------------"
-				+"------------------------------------------");
+		System.out.println("--------------------------------------------------------------------------------------------------------------------------");
 		System.out.println("\t\t\t\tUNO CARD GAME");
-		System.out.println("---------------------------------------"
-				+ "-----------------------------------------"
-				+"------------------------------------------");
+		System.out.println("--------------------------------------------------------------------------------------------------------------------------");
 		game.init();					// Initiate the game.
 		sign.sign();	// Registers players.
 		game.start();					// Start the game.
